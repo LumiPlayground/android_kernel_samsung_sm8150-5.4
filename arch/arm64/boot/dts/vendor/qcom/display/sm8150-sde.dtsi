@@ -470,8 +470,16 @@
 		compatible = "qcom,dsi-phy-v4.0";
 		label = "dsi-phy-0";
 		cell-index = <0>;
-		reg = <0xae94400 0x760>;
-		reg-names = "dsi_phy";
+		#clock-cells = <1>;
+		reg = <0xae94400 0x760>,
+			<0xae94900 0x260>,
+			<0xaf03000 0x8>;
+		reg-names = "dsi_phy", "pll_base", "gdsc_base";
+		pll-label = "dsi_pll_7nm";
+
+		qcom,dsi-pll-ssc-en;
+		qcom,dsi-pll-ssc-mode = "down-spread";
+
 		vdda-0p9-supply = <&pm8150_l5>;
 		qcom,platform-strength-ctrl = [55 03
 						55 03
@@ -503,7 +511,17 @@
 		label = "dsi-phy-1";
 		cell-index = <1>;
 		reg = <0xae96400 0x760>;
-		reg-names = "dsi_phy";
+
+		#clock-cells = <1>;
+		reg = <0xae96400 0x760>,
+			<0xae96a00 0x1e0>,
+			<0xaf03000 0x8>;
+		reg-names = "dsi_phy", "pll_base", "gdsc_base";
+		pll-label = "dsi_pll_7nm";
+
+		qcom,dsi-pll-ssc-en;
+		qcom,dsi-pll-ssc-mode = "down-spread";
+
 		vdda-0p9-supply = <&pm8150_l5>;
 		qcom,platform-strength-ctrl = [55 03
 						55 03
@@ -571,9 +589,9 @@
 			 <&dispcc DISP_CC_MDSS_DP_LINK_INTF_CLK>,
 			 <&dispcc DISP_CC_MDSS_DP_CRYPTO_CLK>,
 			 <&dispcc DISP_CC_MDSS_DP_PIXEL_CLK_SRC>,
-			 <&mdss_dp_pll DP_VCO_DIVIDED_CLK_SRC_MUX>,
+			 <&sde_dp DP_VCO_DIVIDED_CLK_SRC_MUX>,
 			 <&dispcc DISP_CC_MDSS_DP_PIXEL1_CLK_SRC>,
-			 <&mdss_dp_pll DP_VCO_DIVIDED_CLK_SRC_MUX>,
+			 <&sde_dp DP_VCO_DIVIDED_CLK_SRC_MUX>,
 			 <&dispcc DISP_CC_MDSS_DP_PIXEL_CLK>,
 			 <&dispcc DISP_CC_MDSS_DP_PIXEL1_CLK>,
 			 <&dispcc DISP_CC_MDSS_DP_LINK_CLK_SRC>,
