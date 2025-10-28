@@ -309,6 +309,25 @@ endif
 dtb-$(CONFIG_ARCH_SCUBA) += qrb2210-rb1.dtb
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
+	dtbo-$(CONFIG_ARCH_SM8150) += \
+		sm8150-mtp-overlay.dtbo \
+		sm8150-qrd-overlay.dtbo \
+		sm8150-sdx50m-mtp-overlay.dtbo \
+		sm8150-sdx50m-qrd-overlay.dtbo
+
+sm8150-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
+sm8150-qrd-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
+sm8150-sdx50m-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
+sm8150-sdx50m-qrd-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
+else
+dtb-$(CONFIG_ARCH_SM8150)	+= \
+	sm8150-mtp.dtb \
+	sm8150-qrd.dtb \
+	sm8150-v2-mtp.dtb \
+	sm8150-v2-qrd.dtb
+endif
+
+ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 ifeq ($(CONFIG_AUTO_LXC_OVERLAY), y)
 	dtbo-$(CONFIG_ARCH_SA8155) += \
 		sa8155-adp-star-lxc-overlay.dtbo \
