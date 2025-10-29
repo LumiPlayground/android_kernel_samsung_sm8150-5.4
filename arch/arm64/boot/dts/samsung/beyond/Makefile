@@ -1,5 +1,5 @@
 # Path of Qcom Device tree
-QCOM_DTB := ../../qcom
+QCOM_DTB := ../../vendor/qcom
 
 dtbo-$(CONFIG_SEC_BEYOND0QLTE_PROJECT) = sm8150-sec-beyond0qlte-overlay-r07.dtbo \
 			sm8150-sec-beyond0qlte-overlay-r08.dtbo \

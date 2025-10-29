@@ -1,5 +1,5 @@
 # Path of Qcom Device tree
-QCOM_DTB := ../../qcom
+QCOM_DTB := ../../vendor/qcom
 
 dtbo-$(CONFIG_SEC_R5Q_PROJECT) = sm8150-sec-r5q-overlay-r00.dtbo	\
 					sm8150-sec-r5q-overlay-r01.dtbo \

@@ -1,5 +1,5 @@
 # Path of Qcom Device tree
-QCOM_DTB := ../../qcom
+QCOM_DTB := ../../vendor/qcom
 
 dtbo-$(CONFIG_SEC_WINNERLTE_PROJECT) = sm8150-sec-winnerlte-overlay-r04.dtbo	\
 					sm8150-sec-winnerlte-overlay-r06.dtbo	\
