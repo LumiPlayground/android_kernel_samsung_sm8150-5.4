@@ -2705,6 +2705,7 @@
 #include "sm8150-regulator.dtsi"
 #include "sm8150-pm.dtsi"
 #include "sm8150-qupv3.dtsi"
+#include "sm8150-audio.dtsi"
 #include "sm8150-slpi-pinctrl.dtsi"
 #include "sm8150-ssc-qupv3.dtsi"
 #include "sm8150-smp2p.dtsi"
